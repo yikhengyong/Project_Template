@@ -7,7 +7,18 @@
 #include <stdio.h>
 #include "function.h" 
 
-void function();
+/* 
+ ========================= Global Variable Definitions =========================
+ * function.h only *declares* these (extern). This is the single translation
+ * unit that actually *defines* them — required so the program links under
+ * GCC 10+/Clang, which default to -fno-common. 
+ ================================================================================
+ */
+
+signed char errorCode = 0;
+signed int i = 0;
+
+void function(void);
 
 int main(void) {
 
@@ -43,7 +54,7 @@ int main(void) {
 * @return None
 */
 
-void function() {
+void function(void) {
 
     printf("Hello, World!\n");
     i = -99999;
