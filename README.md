@@ -57,6 +57,7 @@ This project deliberately writes out the entire string manipulation process by h
 	│   └── custom-function.c
 	├── main.c
 	├── README.md
+	├── LICENSE
 
 
 <br>
