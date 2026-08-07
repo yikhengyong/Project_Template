@@ -12,14 +12,15 @@
 void custom_function() {
     
     int* ptr = (int*)malloc(sizeof(int)); // Allocate memory for one integer
-    i = 1234;
-    printf("i value in funtion_in_src():%d\n", i);
-    //ptr = NULL;
 
     if (!ptr) {
         errorCode = -2;
         fprintf(stderr, "Error Code [%i] : Pointer is NULL. \n", errorCode);
+        return;
     }
+
+    i = 1234;
+    printf("i value in custom_function():%d\n", i);
 
     free(ptr); // Free the allocated memory when done
 }
