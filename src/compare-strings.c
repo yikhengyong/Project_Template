@@ -3,7 +3,10 @@
  * @brief	Custom string comparison function
  * @param	str1 - Available string
  * @param	str2 - Target string
- * @return	0 if the strings are equal, otherwise the difference between the first two differing characters
+ * @return	0 if the strings are equal, non-zero otherwise.
+ *          NOTE: the non-zero magnitude has no defined meaning and must
+ *          NOT be used for ordering (e.g. sorting) — the return type is
+ *          unsigned, so it cannot represent a signed difference.
 */
 
 
