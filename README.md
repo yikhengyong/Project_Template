@@ -55,10 +55,64 @@ This project deliberately writes out the entire string manipulation process by h
 	├── src/
 	│   └── compare-strings.c
 	│   └── custom-function.c
+	├── .github/
+	│   └── workflows/
+	|		└── test.yml
 	├── main.c
 	├── README.md
 	├── LICENSE
+	├── .gitignore
+	├── Makefile
 
+
+<br>
+
+## .gitignore
+- It tells tools which file can be ignored.
+- It ensures that when someone downloads your repository, they only get the clean, essential files required to run the project.
+- You may go to [gitignore.io](https://www.toptal.com/developers/gitignore) to generate .gitignore.
+	- Select programming languages, IDE and OS.
+ 	- Example: C, Visual Studio, Linux, Windows
+
+<br>
+
+## Makefile
+- If you create Makefile in text editor, remember save as `Makefile` not `Makefile.txt`
+- Without Makefile, user need to type long command to build executable (`gcc`), testing (`./main`) and cleanup (`rm -f`) etc.
+- Makefile can add customize shortcut commands.
+- To use the commands, run `make[Command Name]`. Example:
+	-  	Build the executable --> `make`
+ 	-  	Run the executable --> `make run`
+    -   Delete executable --> `make clean`
+
+<br>
+
+## .yml
+- GitHub can test coding in Linux, Windows and macOS.
+- The configuration files should be stored in `.github/workflows/[File Name].yml`
+	- Example: `.github/workflows/test.yml`
+
+<br>
+
+## Testing on local Windows/Linux PC
+1. Got to repository page and click `<>Code` --> Download zip
+2. Extract the zip
+3. Open Command Prompt (Windows) or Terminal (Linux) 
+4. Direct to directory which contain `main.c`.
+5. Build executable
+	- `make`
+6. Run executable
+	- `make run`
+7. Cleanup executable
+    - `make clean`
+
+<br>
+
+## Testing on Github
+1. After `.yml` is uploaded to repository, GitHub will run your coding automatically.
+2. Go to repository page and click `Actions` in top menu.
+3. Click the project `Project_Template` at left side menu.
+4. Click the `Create test.yml` --> `build-and-test` to check the running log.
 
 <br>
 
