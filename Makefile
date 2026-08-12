@@ -6,20 +6,28 @@ INC_DIR   := include
 BUILD_DIR := build
 
 # Detect whether is Linux or Windows OS
-ifeq ($(OS),Windows_NT)
-    EXE         := .exe
-    TARGET      := $(BUILD_DIR)/main$(EXE)
-    MKDIR_BUILD := if not exist "$(BUILD_DIR)" mkdir "$(BUILD_DIR)"
-    MKDIR_SRC   := if not exist "$(BUILD_DIR)\$(SRC_DIR)" mkdir "$(BUILD_DIR)\$(SRC_DIR)"
-    RM          := if exist "$(BUILD_DIR)" rmdir /s /q "$(BUILD_DIR)"
-    RUN_CMD     := $(BUILD_DIR)\main.exe
-else
+UNAME_S := $(shell uname -s)
+ifeq ($(UNAME_S),Linux)
     EXE         :=
     TARGET      := $(BUILD_DIR)/main
     MKDIR_BUILD := mkdir -p $(BUILD_DIR)
     MKDIR_SRC   := mkdir -p $(BUILD_DIR)/$(SRC_DIR)
     RM          := rm -rf $(BUILD_DIR)
     RUN_CMD     := ./$(TARGET)
+else ifeq ($(UNAME_S),Darwin)
+    EXE         :=
+    TARGET      := $(BUILD_DIR)/main
+    MKDIR_BUILD := mkdir -p $(BUILD_DIR)
+    MKDIR_SRC   := mkdir -p $(BUILD_DIR)/$(SRC_DIR)
+    RM          := rm -rf $(BUILD_DIR)
+    RUN_CMD     := ./$(TARGET)
+else
+    EXE         := .exe
+    TARGET      := $(BUILD_DIR)/main$(EXE)
+    MKDIR_BUILD := if not exist "$(BUILD_DIR)" mkdir "$(BUILD_DIR)"
+    MKDIR_SRC   := if not exist "$(BUILD_DIR)\$(SRC_DIR)" mkdir "$(BUILD_DIR)\$(SRC_DIR)"
+    RM          := if exist "$(BUILD_DIR)" rmdir /s /q "$(BUILD_DIR)"
+    RUN_CMD     := $(BUILD_DIR)\main.exe
 endif
 
 # Source & Object Files
