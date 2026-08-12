@@ -30,7 +30,7 @@ jobs:
 
       - name: Set up MinGW/Make (Windows)
         if: runner.os == 'Windows'
-        uses: uitan/setup-mingw@v1
+        uses: egor-tensin/setup-mingw@v2
 
       - name: Compile Project
         run: make
