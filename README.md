@@ -82,7 +82,7 @@ This project deliberately writes out the entire string manipulation process by h
 - Makefile can add customize shortcut commands.
 - To use the commands, run `make[Command Name]`. Example:
 	-  	Build the executable --> `make`
- 	-  	Run the executable --> `make run`
+ 	-  	Run the executable --> `make run` or `make test`
     -   Delete executable --> `make clean`
 
 <br>
@@ -112,7 +112,7 @@ This project deliberately writes out the entire string manipulation process by h
 1. After `.yml` is uploaded to repository, GitHub will run your coding automatically.
 2. Go to repository page and click `Actions` in top menu.
 3. Click the project `Project_Template` at left side menu.
-4. Click the `Create test.yml` --> `build-and-test` to check the running log.
+4. Click the `Create test.yml` --> `build on ubuntu-latest` or `build on windows-latest` to check the running log.
 
 <br>
 
