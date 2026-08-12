@@ -1,4 +1,4 @@
-# The display name of the workflow as it appears in the GitHub Actions tab. Can change it if need.
+# The display name of the workflow as it appears in the GitHub Actions tab. Can change it if need
 name: Project_Template
 
 # Defines what events cause the workflow to run. 
