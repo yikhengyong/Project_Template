@@ -30,7 +30,14 @@ jobs:
 
       - name: Set up MinGW/Make (Windows)
         if: runner.os == 'Windows'
-        uses: egor-tensin/setup-mingw@v2
+        uses: nick-invision/retry@v2
+        with:
+          timeout_minutes: 10
+          max_attempts: 3
+          command: |
+            powershell -Command "
+            choco install mingw -y
+            "
 
       - name: Compile Project
         run: make
