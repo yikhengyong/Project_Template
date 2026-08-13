@@ -46,12 +46,20 @@ $(TARGET): $(OBJS)
 
 # Compile root main.c
 $(BUILD_DIR)/main.o: main.c
+ifdef UNAME_S
 	@$(MKDIR_BUILD)
+else
+	$(MKDIR_BUILD)
+endif
 	$(CC) $(CFLAGS) -c $< -o $@
 
 # Compile src/*.c files
 $(BUILD_DIR)/$(SRC_DIR)/%.o: $(SRC_DIR)/%.c
+ifdef UNAME_S
 	@$(MKDIR_SRC)
+else
+	$(MKDIR_SRC)
+endif
 	$(CC) $(CFLAGS) -c $< -o $@
 
 # Include auto-generated dependency rules
