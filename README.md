@@ -102,7 +102,7 @@ This project deliberately writes out the entire string manipulation process by h
 5. Build executable
 	- `make`
 6. Run executable
-	- `make run`
+	- `make run` or `make test`
 7. Cleanup executable
     - `make clean`
 
