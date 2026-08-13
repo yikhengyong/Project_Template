@@ -66,4 +66,4 @@ test: run
 
 # Delete build folder 
 clean:
-	$(if $(filter Windows_NT,$(OS)),if exist "$(BUILD_DIR)" rmdir /s /q "$(BUILD_DIR)",rm -rf $(BUILD_DIR))
+	@if [ -d "$(BUILD_DIR)" ]; then rm -rf "$(BUILD_DIR)"; fi
