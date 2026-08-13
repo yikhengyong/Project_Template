@@ -113,7 +113,8 @@ This project deliberately writes out the entire string manipulation process by h
 2. Go to repository page and click `Actions` in top menu.
 3. Click the project `Project_Template` at left side menu.
 4. GitHub will test coding automatically when push new commit. Click the `[Commit]` to check the workflow log.
-5. Click the `build on ubuntu-latest` or `build on windows-latest` to check the running log.
+	- Example: `Refactor Makefile for improved OS detection and cleanup` 
+6. Click the `build on ubuntu-latest` or `build on windows-latest` to check the running log.
 
 <br>
 
