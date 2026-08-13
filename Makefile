@@ -75,7 +75,7 @@ test: run
 # Delete build folder
 clean:
 ifeq ($(OS),Windows_NT)
-	@if exist "$(BUILD_DIR)" rmdir /s /q "$(BUILD_DIR)" >nul 2>&1 || true
+	@if exist "$(BUILD_DIR)" (rmdir /s /q "$(BUILD_DIR)" >nul 2>&1) || true
 else
 	@rm -rf $(BUILD_DIR)
 endif
